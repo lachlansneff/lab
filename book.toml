@@ -1,0 +1,14 @@
+[book]
+authors = ["Lachlan Sneff"]
+language = "en"
+multilingual = false
+src = "src"
+title = "lachlan sneff's lab notebook"
+
+
+[rust]
+edition = "2018"
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/lachlansneff/lab"
