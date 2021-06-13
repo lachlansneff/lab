@@ -1,2 +1,1 @@
-# lab
-My lab notebook
+# My Lab Notebook
