@@ -1,0 +1,16 @@
+[package]
+name = "preprocess"
+version = "0.1.0"
+authors = ["Lachlan Sneff <lachlan.sneff@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "2.33"
+mdbook = "0.4.10"
+semver = "1.0"
+serde_json = "1.0"
+
+pulldown-cmark = "0.8.0"
+pulldown-cmark-to-cmark = "6.0.1"

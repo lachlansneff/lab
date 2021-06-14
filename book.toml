@@ -12,5 +12,12 @@ edition = "2018"
 create-missing = false
 
 [output.html]
+default-theme = "rust"
 mathjax-support = true
 git-repository-url = "https://github.com/lachlansneff/lab"
+cname = "lab.charted.space"
+additional-css = ["toc.css"]
+
+[preprocessor.preprocess]
+command = "cargo run --manifest-path preprocess/Cargo.toml"
+renderer = ["html"]

@@ -1,4 +1,4 @@
-#### The Pre-Amplifier Board has Arrived - *December 7th, 2020*
+# The Pre-Amplifier Board has Arrived - *December 7th, 2020*
 
 <img src="preamp-v0.1.jpg"  width="50%" height="50%" />
 
@@ -8,7 +8,7 @@ When I get a chance, I'll also post about how I intend for the AFM to function (
 
 This project is partially inspired by Dan Berard's fantastic Frequency-Modulated Atomic Force Microscope project on Hackaday. His ideas and schematics for the pre-amplifier were extremely useful in helping me design this.
 
-#### Back to the Schematic... Board - *December 11th, 2020*
+# Back to the Schematic... Board - *December 11th, 2020*
 
 <img src="preamp-v0.1-soldered.jpg"  width="50%" height="50%" />
 
