@@ -5,9 +5,11 @@ multilingual = false
 src = "src"
 title = "lachlan sneff's lab notebook"
 
-
 [rust]
 edition = "2018"
+
+[build]
+create-missing = false
 
 [output.html]
 mathjax-support = true
