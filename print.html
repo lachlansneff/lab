@@ -86,7 +86,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> README</a></li><li class="chapter-item expanded "><a href="afm/atomic_force_microscope.html"><strong aria-hidden="true">2.</strong> Atomic Force Microscope</a></li><li class="chapter-item expanded "><a href="airlift/airlift.html"><strong aria-hidden="true">3.</strong> Rust Driver for Arduino Airlift</a></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> README</a></li><li class="chapter-item expanded "><a href="airlift/airlift.html"><strong aria-hidden="true">2.</strong> Rust Driver for Adafruit Airlift</a></li><li class="chapter-item expanded "><a href="afm/atomic_force_microscope.html"><strong aria-hidden="true">3.</strong> Atomic Force Microscope</a></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -152,31 +152,19 @@
 
                 <div id="content" class="content">
                     <main>
-                        <div id="toc"><p class="toc-title">Contents:</p>
-<ul>
-<li><a href="index.html#readme">README</a></li>
-</ul>
-</div>
-<h1 id="readme"><a class="header" href="#readme">README</a></h1>
+                        <!-- notoc -->
+<h1 id="lab-notebook"><a class="header" href="#lab-notebook">Lab Notebook</a></h1>
 <p>This lab notebook contains my notes, thoughts, and plans for the various projects I work on.</p>
-<div style="break-before: page; page-break-before: always;"></div><div id="toc"><p class="toc-title">Contents:</p>
+<h2 id="sections"><a class="header" href="#sections">Sections</a></h2>
 <ul>
-<li><a href="afm/atomic_force_microscope.html#the-pre-amplifier-board-has-arrived---december-7th-2020">The Pre-Amplifier Board has Arrived - December 7th, 2020</a></li>
-<li><a href="afm/atomic_force_microscope.html#back-to-the-schematic-board---december-11th-2020">Back to the Schematic... Board - December 11th, 2020</a></li>
+<li>
+<p>The <a href="airlift/airlift.html">Adafruit Airlift section</a> presents the data I gathered from reverse engineering the Airlift driver libraries.</p>
+</li>
+<li>
+<p>The <a href="afm/atomic_force_microscope.html">Atomic Force Microscope section</a> contains some posts from my old blog about designing a pre-amplifier
+for an atomic force microscope that I was building from scratch at one point.</p>
+</li>
 </ul>
-</div>
-<h1 id="the-pre-amplifier-board-has-arrived---december-7th-2020"><a class="header" href="#the-pre-amplifier-board-has-arrived---december-7th-2020">The Pre-Amplifier Board has Arrived - <em>December 7th, 2020</em></a></h1>
-<img src="afm/preamp-v0.1.jpg"  width="50%" height="50%" />
-<p>The pre-amplifier board has arrived from jlpcb. This is just an initial prototype (hence the &quot;v0.1 - prototype&quot; label on the board), but it should help me confirm whether my approach for an AFM will work. The components have also arrived, so I'll be putting this together when my semester ends in about two weeks.</p>
-<p>When I get a chance, I'll also post about how I intend for the AFM to function (along with some very iffy drawings). It's different from most commerical AFMs, where a laser is used to detect the movement of a cantilever, but instead uses an oscillating, deconstructed quartz tuning fork (QTF) to detect surface detail.</p>
-<p>This project is partially inspired by Dan Berard's fantastic Frequency-Modulated Atomic Force Microscope project on Hackaday. His ideas and schematics for the pre-amplifier were extremely useful in helping me design this.</p>
-<h1 id="back-to-the-schematic-board---december-11th-2020"><a class="header" href="#back-to-the-schematic-board---december-11th-2020">Back to the Schematic... Board - <em>December 11th, 2020</em></a></h1>
-<img src="afm/preamp-v0.1-soldered.jpg"  width="50%" height="50%" />
-<p>I found some time to heat up my reflow station and solder one of the boards. In the process of doing so, I realized I made a couple of mistakes that I should've caught before hand.</p>
-<p>I picked giant capacitors for some reason. This isn't bad, just annoying.
-I forgot to order the trimmer potentiometer. I have to be careful about this.
-I used two of the same op-amp when I meant to use two different models that have different characteristics. Oops!
-I'll re-design and re-order it as soon as possible. I'm hoping that I won't have to go through more than a few iterations of this before getting it working.</p>
 <div style="break-before: page; page-break-before: always;"></div><div id="toc"><p class="toc-title">Contents:</p>
 <ul>
 <li><a href="airlift/airlift.html#intro-to-the-airlift">Intro to the Airlift</a></li>
@@ -425,6 +413,24 @@ pub fn get_firmware_version(&amp;mut self) -&gt; Result&lt;heapless::String&lt;1
 <tr><td>0</td><td>SSID</td><td>0</td><td>0x1 if success</td></tr>
 </tbody></table>
 <p>There are a bunch more commands, if you'd like to see all of them, take a look at the implementation of the driver I've written: https://github.com/lachlansneff/airlift-driver.</p>
+<div style="break-before: page; page-break-before: always;"></div><div id="toc"><p class="toc-title">Contents:</p>
+<ul>
+<li><a href="afm/atomic_force_microscope.html#the-pre-amplifier-board-has-arrived---december-7th-2020">The Pre-Amplifier Board has Arrived - December 7th, 2020</a></li>
+<li><a href="afm/atomic_force_microscope.html#back-to-the-schematic-board---december-11th-2020">Back to the Schematic... Board - December 11th, 2020</a></li>
+</ul>
+</div>
+<h1 id="the-pre-amplifier-board-has-arrived---december-7th-2020"><a class="header" href="#the-pre-amplifier-board-has-arrived---december-7th-2020">The Pre-Amplifier Board has Arrived - <em>December 7th, 2020</em></a></h1>
+<img src="afm/preamp-v0.1.jpg"  width="50%" height="50%" />
+<p>The pre-amplifier board has arrived from jlpcb. This is just an initial prototype (hence the &quot;v0.1 - prototype&quot; label on the board), but it should help me confirm whether my approach for an AFM will work. The components have also arrived, so I'll be putting this together when my semester ends in about two weeks.</p>
+<p>When I get a chance, I'll also post about how I intend for the AFM to function (along with some very iffy drawings). It's different from most commerical AFMs, where a laser is used to detect the movement of a cantilever, but instead uses an oscillating, deconstructed quartz tuning fork (QTF) to detect surface detail.</p>
+<p>This project is partially inspired by Dan Berard's fantastic Frequency-Modulated Atomic Force Microscope project on Hackaday. His ideas and schematics for the pre-amplifier were extremely useful in helping me design this.</p>
+<h1 id="back-to-the-schematic-board---december-11th-2020"><a class="header" href="#back-to-the-schematic-board---december-11th-2020">Back to the Schematic... Board - <em>December 11th, 2020</em></a></h1>
+<img src="afm/preamp-v0.1-soldered.jpg"  width="50%" height="50%" />
+<p>I found some time to heat up my reflow station and solder one of the boards. In the process of doing so, I realized I made a couple of mistakes that I should've caught before hand.</p>
+<p>I picked giant capacitors for some reason. This isn't bad, just annoying.
+I forgot to order the trimmer potentiometer. I have to be careful about this.
+I used two of the same op-amp when I meant to use two different models that have different characteristics. Oops!
+I'll re-design and re-order it as soon as possible. I'm hoping that I won't have to go through more than a few iterations of this before getting it working.</p>
 
                     </main>
 
