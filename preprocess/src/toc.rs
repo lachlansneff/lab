@@ -41,6 +41,10 @@ fn build_toc(headers: impl IntoIterator<Item=(u32, String, String)>, dest: &mut 
 }
 
 fn generate_toc(chapter: &mut Chapter) {
+    if chapter.content.trim_start().starts_with("<!-- notoc -->") {
+        return;
+    }
+
     let mut events = Parser::new(&chapter.content);
 
     let mut headers = vec![];
@@ -81,15 +85,7 @@ fn generate_toc(chapter: &mut Chapter) {
 
     cmark(toc, &mut toc_str, None).expect("failed to regenerate markdown");
 
-    // let toc_str = format!("{}\n{}", toc_str, chapter.content);
-
     chapter.content = format!("{}\n{}", toc_str, chapter.content);
-
-    // let old_content = mem::replace(&mut chapter.content, String::new());
-
-    // let new_events = toc.chain(Parser::new(&old_content));
-
-    // cmark(new_events, &mut chapter.content, None).expect("failed to regenerate markdown");
 }
 
 impl Preprocessor for TableOfContents {
