@@ -2,7 +2,6 @@ use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::fmt::Write;
 use std::iter;
-use std::mem;
 
 use mdbook::book::{Book, Chapter};
 use mdbook::preprocess::{Preprocessor, PreprocessorContext};
@@ -78,11 +77,19 @@ fn generate_toc(chapter: &mut Chapter) {
 
     let mut temp = String::new();
     let toc = build_toc(headers, &mut temp);
-    let old_content = mem::replace(&mut chapter.content, String::new());
+    let mut toc_str = String::new();
 
-    let new_events = toc.chain(Parser::new(&old_content));
+    cmark(toc, &mut toc_str, None).expect("failed to regenerate markdown");
 
-    cmark(new_events, &mut chapter.content, None).expect("failed to regenerate markdown");
+    // let toc_str = format!("{}\n{}", toc_str, chapter.content);
+
+    chapter.content = format!("{}\n{}", toc_str, chapter.content);
+
+    // let old_content = mem::replace(&mut chapter.content, String::new());
+
+    // let new_events = toc.chain(Parser::new(&old_content));
+
+    // cmark(new_events, &mut chapter.content, None).expect("failed to regenerate markdown");
 }
 
 impl Preprocessor for TableOfContents {
